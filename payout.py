@@ -1,12 +1,11 @@
 from beem import Hive
 from beem import exceptions
 from time import sleep
-
 import getpass
 import pandas as pd
 import json
 
-hive = Hive(node = "https://api.deathwing.me", nobroadcast=False, num_retries = 3)
+hive = Hive(node = "https://hived.emre.sh", nobroadcast=False, expiration = 60, num_retries = 3)
 
 name = input("Enter wallet name: ")
 
@@ -35,6 +34,7 @@ def payout():
 	decPoint = input("Enter decimal point(.or,): ")
 
 	df = pd.read_csv(file, decimal = decPoint)
+	df["account"] = df["account"].fillna("null")
 	df["amount"] = df["amount"].astype(float)
 	
 	while(len(df) > 0) : 

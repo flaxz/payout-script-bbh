@@ -13,7 +13,7 @@ token = str("BBH")
 getHolders = str("null,bradleyarrow")
 payToken = str("SWAP.HIVE")
 payAmount = float(1.0)
-payMemo = str("Daily payout based on your BBH balance.")
+payMemo = str("Weekly payout based on your BBH balance.")
 minBalance = float(10.0)
 
 # Script

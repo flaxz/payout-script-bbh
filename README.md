@@ -1,6 +1,6 @@
 # Hive Payout Script For BBH
 
-2 script files, one will create the payout data, and the other will do the payout.
+2 Python script files, one will create the payout data, and the other will do the payout.
 
 *Please note that this software is in early Beta stage, and that you need to know what you are doing to use it.*
 
@@ -20,13 +20,19 @@ sudo pip3 install -U beem hiveengine pandas datetime
 
 ## Configure And Run The Script
 
-First clone the Github repository to your home directory:
+Clone the Github repository to your home directory:
 ```
 cd ~
 git clone https://github.com/flaxz/payout-script-bbh
 ```
 
-Next edit the settings for getting the payout data, then save and close the file.
+Make the bash files executable:
+```
+cd ~/payout-script-bbh
+chmod u+x hive.sh pay.sh
+```
+
+Edit the settings for getting the payout data, then save and close the file.
 
 ```
 sudo apt install nano 
@@ -53,7 +59,7 @@ Run the script to get the payout data.
 
 ```
 cd ~/payout-script-bbh
-python3 gethive.py
+./hive.sh
 ls
 ```
 
@@ -85,7 +91,7 @@ IMPORTANT: Make sure that the account you do the payout from has sufficient fund
 ```
 cd ~/payout-script-bbh
 ls
-python3 payout.py
+./pay.sh
 ```
 
 1. Enter account name.
@@ -110,5 +116,6 @@ rm filename.csv
 That is it, and remember that it is beta level code, plus that there is no check yet for the full payout amount, so you need to check it manually.
 
 Coders: 
-flaxz
-bambukah
+@flaxz
+@bambukah
+@sc-steemit

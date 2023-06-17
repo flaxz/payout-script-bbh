@@ -29,7 +29,7 @@ git clone https://github.com/flaxz/payout-script-bbh
 Make the bash files executable:
 ```
 cd ~/payout-script-bbh
-chmod u+x hive.sh pay.sh
+chmod u+x hive.sh pay.sh leo.sh
 ```
 
 Edit the settings for getting the payout data, then save and close the file.
@@ -60,6 +60,7 @@ Run the script to get the payout data.
 ```
 cd ~/payout-script-bbh
 ./hive.sh
+./leo.sh
 ls
 ```
 

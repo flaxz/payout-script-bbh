@@ -14,7 +14,7 @@ getHolders = str("null,bradleyarrow")
 payToken = str("LEO")
 payAmount = float(10.0)
 payMemo = str("Weekly payout based on your BBH balance.")
-minBalance = float(1000.0)
+minBalance = float(10000.0)
 
 # Script
 

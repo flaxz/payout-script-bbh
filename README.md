@@ -29,7 +29,7 @@ git clone https://github.com/flaxz/payout-script-bbh
 Make the bash files executable:
 ```
 cd ~/payout-script-bbh
-chmod u+x hive.sh pay.sh leo.sh
+chmod u+x getpay.sh pay.sh reset.sh
 ```
 
 Edit the settings for getting the payout data, then save and close the file.
@@ -39,6 +39,7 @@ sudo apt install nano
 cd ~/payout-script-bbh
 ls
 nano gethive.py
+nano getleo.py
 ```
 
 token = Base token for the payout (BBH).
@@ -59,14 +60,14 @@ Run the script to get the payout data.
 
 ```
 cd ~/payout-script-bbh
-./hive.sh
-./leo.sh
+./getpay.sh
+```
+
+View the files in nano.
+
+```
+cd ~/payout-script-bbh/pay
 ls
-```
-
-View the file in nano.
-
-```
 nano filename.csv
 ```
 
@@ -87,8 +88,6 @@ exit
 
 After getting the payout data, then run the payout.
 
-IMPORTANT: Make sure that the account you do the payout from has sufficient funds to cover the payout, the script does not currently have a check for this.
-
 ```
 cd ~/payout-script-bbh
 ls
@@ -97,26 +96,28 @@ ls
 
 1. Enter account name.
 2. Enter wallet password for beempy (on the first run you will be also be prompted to import the Active Key).
-3. Enter the CSV file name with the data for the payout.
-4. Select dot or comma for decimal point, use dot (.)
 
-Now the payout will run to completion, if no issues arise.
+Now the payout will run to completion, if no issues arise, it will automatically check for sufficient funds in the account, and exit if it's not, and if so add funds and then restart with.
 
-If you need to edit the CSV file due to the payout stopping before it has run it's course then you need to save it with a new name for the remaining payouts, or it will load the old file from cache.
+```
+./pay.sh
+```
+
+There is no need to edit anything as all the payouts are saved in the database, and it will resume where it stopped.
 
 After successful run check the account to see that it has paid out correctly.
 
-Then delete the CSV file.
+You do not have to delete anything, but if need be for whatever reason you can delete all CSV files and the database with the command below.
 
 ```
 cd ~/payout-script-bbh
-ls
-rm filename.csv
+./reset.sh
 ```
 
-That is it, and remember that it is beta level code, plus that there is no check yet for the full payout amount, so you need to check it manually.
+That is it, and remember that it is beta level code.
 
 Coders: 
 @flaxz
 @bambukah
 @sc-steemit
+@captaincryptic

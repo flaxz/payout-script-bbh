@@ -71,8 +71,10 @@ def main():
   year = now.strftime("%y")
   fileName = payToken + "-" + month + day + year + ".csv"
   print("File name:", fileName)
+  
+  path = r"./pay/"
 
-  df.to_csv(fileName, index = False)
+  df.to_csv(path+fileName, index = False)
 
 if __name__ == "__main__":
   

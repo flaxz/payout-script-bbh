@@ -40,6 +40,7 @@ cd ~/payout-script-bbh
 ls
 nano gethive.py
 nano getleo.py
+nano getalive.py
 ```
 
 token = Base token for the payout (BBH).

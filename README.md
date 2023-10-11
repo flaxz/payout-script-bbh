@@ -41,6 +41,7 @@ ls
 nano gethive.py
 nano getleo.py
 nano getalive.py
+nano getctp.py
 ```
 
 token = Base token for the payout (BBH).

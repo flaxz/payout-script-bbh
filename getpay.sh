@@ -5,3 +5,5 @@ python3 gethive.py
 python3 getleo.py
 
 python3 getalive.py
+
+python3 getctp.py

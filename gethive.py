@@ -12,9 +12,10 @@ api = Api(url = "https://engine.rishipanthee.com/")
 token = str("BBH")
 getHolders = str("null,bradleyarrow")
 payToken = str("SWAP.HIVE")
-payAmount = float(1.0)
+payAmount = float(5.0) # SWAP.HIVE
 payMemo = str("Weekly payout based on your BBH balance.")
-minBalance = float(10.0)
+minBalance = float(10.0) # BBH
+minDecimal = float(0.00000001) # SWAP.HIVE
 
 # Script
 
@@ -52,7 +53,7 @@ def main():
 
   df = df.assign(amount = (payAmount * (df.sum(axis = 1, numeric_only = True) / sumBalance)))
   df["amount"] = df["amount"].astype(float)
-  indexZero2 = df[df["amount"] < 0.00000001].index
+  indexZero2 = df[df["amount"] < minDecimal].index
   df.drop(indexZero2, inplace = True)
   df["amount"] = df["amount"].round(payDec)
 

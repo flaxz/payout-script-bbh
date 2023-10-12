@@ -56,6 +56,8 @@ payMemo = Memo for the payout.
 
 minBalance = The minimum balance of BBH needed to get a payout (10.0).
 
+minDecimal = The minimum possible decimal for the token to be paid out.
+
 ### Run the Script
 
 Run the script to get the payout data.

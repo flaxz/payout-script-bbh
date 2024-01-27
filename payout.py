@@ -16,7 +16,7 @@ from datetime import datetime
 
 testing = "NO"
 
-hive = Hive(node="https://hived.emre.sh", nobroadcast=False, num_retries=3, expiration = 60)
+hive = Hive(node="https://anyx.io", nobroadcast=False, num_retries=3, expiration = 60)
 he_node = "https://engine.rishipanthee.com/"
 he_api = Api(url=he_node)
 
